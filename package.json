@@ -4,10 +4,15 @@
   "private": true,
   "scripts": {
     "postinstall": "husky install",
-    "commit": "commit",
+    "commit": "git-cz",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -18,7 +23,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
-    "@commitlint/prompt-cli": "^13.1.0",
+    "@commitlint/cz-commitlint": "^13.1.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -26,6 +31,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "husky": "^7.0.2",

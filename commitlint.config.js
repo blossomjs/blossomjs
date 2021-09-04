@@ -32,70 +32,67 @@ module.exports = {
     },
     questions: {
       type: {
-        description: "Select the type of change that you're committing:",
+        description: "指定commit类型",
         enum: {
           feat: {
-            description: 'A new feature',
+            description: '新特性',
             title: 'Features',
             emoji: '✨',
           },
           fix: {
-            description: 'A bug fix',
+            description: '修复BUG',
             title: 'Bug Fixes',
             emoji: '🐛',
           },
           docs: {
-            description: 'Documentation only changes',
+            description: '仅文档改变',
             title: 'Documentation',
             emoji: '📚',
           },
           style: {
-            description: 'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)',
+            description: '代码格式变更',
             title: 'Styles',
             emoji: '💎',
           },
           refactor: {
-            description: 'A code change that neither fixes a bug nor adds a feature',
+            description: '重构',
             title: 'Code Refactoring',
             emoji: '📦',
           },
           perf: {
-            description: 'A code change that improves performance',
+            description: '性能提升',
             title: 'Performance Improvements',
             emoji: '🚀',
           },
           test: {
-            description: 'Adding missing tests or correcting existing tests',
+            description: '测试相关',
             title: 'Tests',
             emoji: '🚨',
           },
           build: {
-            description: 'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)',
+            description: '构建相关',
             title: 'Builds',
             emoji: '🛠',
           },
           ci: {
-            description: 'Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)',
+            description: 'CI相关',
             title: 'Continuous Integrations',
             emoji: '⚙️',
           },
           chore: {
-            description: "Other changes that don't modify src or test files",
+            description: "调整",
             title: 'Chores',
             emoji: '♻️',
           },
           revert: {
-            description: 'Reverts a previous commit',
+            description: '撤回COMMIT',
             title: 'Reverts',
             emoji: '🗑',
           },
         },
       },
       subject: {
-        description: 'Write a short, imperative tense description of the change',
-      },
-      issues: {
-        description: 'Add issue references (e.g. "fix #123", "re #123".)',
+        description: '对改动进行简短的描述',
       },
     },
   }
