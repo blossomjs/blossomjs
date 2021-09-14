@@ -4,5 +4,8 @@ import router from "./router"
 import store from "./store"
 import "normalize.css"
 import "./assets/css/main.scss"
+import installElementPlus from "./plugins/element"
 
-createApp(App).use(store).use(router).mount("#app")
+const app = createApp(App)
+installElementPlus(app)
+app.use(store).use(router).mount("#app")
