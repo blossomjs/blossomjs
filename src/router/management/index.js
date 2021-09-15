@@ -4,6 +4,7 @@ export default [
   {
     path: "/management",
     component: RouterView,
+    name: "management",
     redirect: "/management/home",
     children: [
       {
