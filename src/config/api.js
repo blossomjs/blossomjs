@@ -1,0 +1,1 @@
+export const TIMEOUT_MILLISECONDS = 60000 * 5
