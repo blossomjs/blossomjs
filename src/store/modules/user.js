@@ -25,11 +25,9 @@ export default {
   actions: {
     login({ commit }, { username = "", password = "" }) {
       req("login", { username, password }).then((res) => {
-        if (res.code === 200) {
-          storage.local.set("token", res.data.token)
-          commit("SET_TOKEN", res.data.token)
-          commit("SET_HASLOGIN", !!res.data.token)
-        }
+        storage.local.set("token", res)
+        commit("SET_TOKEN", res)
+        commit("SET_HASLOGIN", !!res)
       })
     },
     async getUserInfo({ commit }) {
