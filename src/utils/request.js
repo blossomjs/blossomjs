@@ -3,6 +3,7 @@ import { storage } from "@/utils"
 import { TIMEOUT_MILLISECONDS } from "@/config/api"
 
 const instance = axios.create({
+  baseURL: process.env.VUE_APP_BASE_API,
   timeout: TIMEOUT_MILLISECONDS,
 })
 
