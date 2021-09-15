@@ -1,6 +1,10 @@
 import request from "../index.js"
 
 export const config = {
+  login: {
+    url: "/auth/login",
+    method: "post",
+  },
   getUserInfo: {
     url: "/user/info",
     method: "get",
