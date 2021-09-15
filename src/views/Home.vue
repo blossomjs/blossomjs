@@ -6,5 +6,11 @@
 export default {
   name: "Home",
   components: {},
+  created() {
+    this.$store.dispatch("user/login", {
+      username: "huyijin999",
+      password: "huyijin999",
+    })
+  },
 }
 </script>

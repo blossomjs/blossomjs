@@ -10,4 +10,7 @@ module.exports = {
       },
     },
   },
+  devServer: {
+    proxy: "http://119.91.253.247/",
+  },
 }
