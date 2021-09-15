@@ -1,10 +1,8 @@
-const RouterView = () => import("@/components/Layout/router-view")
-
 export default [
   {
     path: "/management",
-    component: RouterView,
     name: "management",
+    component: () => import("@/views/management/layout"),
     redirect: "/management/home",
     children: [
       {
