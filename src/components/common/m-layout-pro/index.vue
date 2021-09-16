@@ -3,7 +3,9 @@
     <el-header class="layout-header"></el-header>
     <el-container class="layout-content">
       <el-aside class="layout-aside">
-        <layout-menu></layout-menu>
+        <el-menu>
+          <layout-menu :navMenus="navMenus"></layout-menu>
+        </el-menu>
       </el-aside>
       <el-container>
         <el-main class="layout-main">
@@ -26,6 +28,22 @@ export default {
   components: {
     layoutMenu,
     layoutFooter,
+  },
+  data() {
+    return {
+      navMenus: [
+        {
+          id: 1,
+          name: "系统管理",
+          icon: "setting",
+          children: [
+            { id: 2, name: "菜单管理" },
+            { id: 3, name: "用户管理" },
+            { id: 4, name: "角色管理" },
+          ],
+        },
+      ],
+    }
   },
 }
 </script>
