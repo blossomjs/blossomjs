@@ -1,6 +1,8 @@
 <template>
   <el-container class="m-layout-pro">
-    <el-header class="layout-header"></el-header>
+    <el-header class="layout-header">
+      <img :src="logo" class="layout-logo" />
+    </el-header>
     <el-container class="layout-content">
       <el-aside class="layout-aside">
         <el-menu>
@@ -29,6 +31,9 @@ export default {
     layoutMenu,
     layoutFooter,
   },
+  props: {
+    logo: String,
+  },
   data() {
     return {
       navMenus: [
@@ -54,7 +59,10 @@ export default {
   overflow: hidden;
   background: #f0f2f5;
   .layout-header {
-    background: linear-gradient(180deg, #364d73 0%, #2a3c59 100%);
+    background: linear-gradient(180deg, #243b55 0%, #141e30 100%);
+    .layout-logo {
+      height: 100%;
+    }
   }
   .layout-content {
     overflow: hidden;
