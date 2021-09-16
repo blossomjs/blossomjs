@@ -1,7 +1,7 @@
 <template>
   <el-container class="m-layout-pro">
     <el-header class="layout-header">
-      <img :src="logo" class="layout-logo"/>
+      <img :src="logo" class="layout-logo" />
     </el-header>
     <el-container class="layout-content">
       <el-aside class="layout-aside">
@@ -59,7 +59,7 @@ export default {
   overflow: hidden;
   background: #f0f2f5;
   .layout-header {
-    background: linear-gradient(180deg, #243B55 0%, #141E30 100%);
+    background: linear-gradient(180deg, #243b55 0%, #141e30 100%);
     .layout-logo {
       height: 100%;
     }
