@@ -5,7 +5,7 @@
     </el-header>
     <el-container class="layout-content">
       <el-aside class="layout-aside">
-        <el-menu>
+        <el-menu router unique-opened :default-active="$route.path">
           <layout-menu :navMenus="navMenus"></layout-menu>
         </el-menu>
       </el-aside>
@@ -42,9 +42,9 @@ export default {
           name: "系统管理",
           icon: "setting",
           children: [
-            { id: 2, name: "菜单管理" },
-            { id: 3, name: "用户管理" },
-            { id: 4, name: "角色管理" },
+            { id: 2, name: "菜单管理", url: "/management/system/menu" },
+            { id: 3, name: "用户管理", url: "/management/system/user" },
+            { id: 4, name: "角色管理", url: "/management/system/role" },
           ],
         },
       ],

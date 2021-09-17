@@ -1,10 +1,10 @@
 <template>
   <div>
     <template v-for="navMenu in navMenus">
-      <el-menu-item v-if="!navMenu.children" :key="navMenu.id" :index="navMenu.id">
+      <el-menu-item v-if="!navMenu.children" :key="navMenu.id" :index="`${navMenu.url}`">
         <template #title>{{ navMenu.name }}</template>
       </el-menu-item>
-      <el-sub-menu v-else :key="navMenu.id" :index="navMenu.id">
+      <el-sub-menu v-else :key="navMenu.id" :index="`${navMenu.url}`">
         <template #title>{{ navMenu.name }}</template>
         <layout-menu :navMenus="navMenu.children"></layout-menu>
       </el-sub-menu>

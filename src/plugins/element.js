@@ -7,6 +7,7 @@ import {
   ElMenu,
   ElSubMenu,
   ElMenuItem,
+  ElTable,
   ElAvatar,
   ElButton,
 } from "element-plus"
@@ -20,6 +21,7 @@ export default (app) => {
   app.use(ElMenu)
   app.use(ElSubMenu)
   app.use(ElMenuItem)
+  app.use(ElTable)
   app.use(ElAvatar)
   app.use(ElButton)
 }
