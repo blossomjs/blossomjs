@@ -1,3 +1,5 @@
+import system from "./system"
+
 export default [
   {
     path: "/management",
@@ -10,6 +12,7 @@ export default [
         name: "home",
         component: () => import("@/views/management/home"),
       },
+      ...system,
     ],
   },
 ]
