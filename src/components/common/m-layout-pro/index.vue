@@ -6,7 +6,7 @@
     <el-container class="layout-content">
       <el-aside class="layout-aside">
         <el-menu router unique-opened :default-active="$route.path">
-          <layout-menu :navMenus="navMenus"></layout-menu>
+          <layout-menu :navMenus="menu"></layout-menu>
         </el-menu>
       </el-aside>
       <el-container>
@@ -33,22 +33,7 @@ export default {
   },
   props: {
     logo: String,
-  },
-  data() {
-    return {
-      navMenus: [
-        {
-          id: 1,
-          name: "系统管理",
-          icon: "setting",
-          children: [
-            { id: 2, name: "菜单管理", url: "/management/system/menu" },
-            { id: 3, name: "用户管理", url: "/management/system/user" },
-            { id: 4, name: "角色管理", url: "/management/system/role" },
-          ],
-        },
-      ],
-    }
+    menu: Array,
   },
 }
 </script>
