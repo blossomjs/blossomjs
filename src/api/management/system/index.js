@@ -5,6 +5,14 @@ export const config = {
     url: "/user/list",
     method: "get",
   },
+  getMenuList: {
+    url: "/menu/list",
+    method: "get",
+  },
+  getRoleList: {
+    url: "/role/list",
+    method: "get",
+  },
 }
 
 export default function req(funcName, data, isToken = true, isCancel = true) {

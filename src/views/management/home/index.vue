@@ -11,13 +11,8 @@
 </template>
 
 <script>
-import mLayoutPage from "@/components/common/m-layout-page"
-
 export default {
   name: "ManagementHome",
-  components: {
-    mLayoutPage,
-  },
 }
 </script>
 

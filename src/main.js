@@ -5,6 +5,7 @@ import store from "./store"
 import "normalize.css"
 import "./assets/css/main.scss"
 import installElementPlus from "./plugins/element"
+import installM from "./plugins/m"
 
 const NOT_FOUND_PATH = "/not-found"
 router.beforeEach(async (to, from, next) => {
@@ -22,4 +23,5 @@ router.beforeEach(async (to, from, next) => {
 
 const app = createApp(App)
 installElementPlus(app)
+installM(app)
 app.use(store).use(router).mount("#app")
