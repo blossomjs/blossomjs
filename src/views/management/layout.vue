@@ -1,8 +1,5 @@
 <template>
-  <m-layout-pro
-    :logo="logoSrc"
-    :menu="menu">
-  </m-layout-pro>
+  <m-layout-pro :logo="logoSrc" :menu="menu"> </m-layout-pro>
 </template>
 
 <script>

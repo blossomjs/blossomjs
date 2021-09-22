@@ -4,9 +4,7 @@ import mPanel from "@/components/common/m-panel"
 import mTable from "@/components/common/m-table"
 
 export default (app) => {
-  [
-    mLayoutPro, mLayoutPage, mPanel, mTable
-  ].forEach((item) => {
+  ;[mLayoutPro, mLayoutPage, mPanel, mTable].forEach((item) => {
     app.component(item.name, item)
   })
 }
