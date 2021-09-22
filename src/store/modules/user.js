@@ -7,7 +7,7 @@ export default {
     token: "",
     loginId: "",
     info: {},
-    hasLogin: true,
+    hasLogin: false,
   },
   getters: {},
   mutations: {
@@ -23,8 +23,8 @@ export default {
     },
   },
   actions: {
-    login({ commit }, { username = "", password = "" }) {
-      req("login", { username, password }).then((res) => {
+    async login({ commit }, { username = "", password = "" }) {
+      await req("login", { username, password }).then((res) => {
         storage.local.set("token", res)
         commit("SET_TOKEN", res)
         commit("SET_HASLOGIN", !!res)
