@@ -26,7 +26,7 @@ export default {
       table: {
         columns: [],
         data: [],
-      }
+      },
     }
   },
   async created() {

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "MPanel"
+  name: "MPanel",
 }
 </script>
 

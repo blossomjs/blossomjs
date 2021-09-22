@@ -1,10 +1,13 @@
 <template>
-  <div></div>
+  <m-layout-page> </m-layout-page>
 </template>
 
 <script>
 export default {
-  name: "MTable",
+  name: "menu",
+  data() {
+    return {}
+  },
 }
 </script>
 
