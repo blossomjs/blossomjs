@@ -2,8 +2,11 @@
   <m-layout-page>
     <m-panel>
       <el-table :data="tableData" stripe style="width: 100%" border>
-        <el-table-column prop="userId" label="编号"> </el-table-column>
-        <el-table-column prop="profileImg" label="角色名"> </el-table-column>
+        <el-table-column prop="roleId" label="编号"> </el-table-column>
+        <el-table-column prop="roleName" label="角色名称"> </el-table-column>
+        <el-table-column prop="description" label="角色描述"> </el-table-column>
+        <el-table-column prop="creatorId" label="角色创建人"> </el-table-column>
+        <el-table-column prop="editorId" label="角色修改人"> </el-table-column>
       </el-table>
     </m-panel>
   </m-layout-page>
@@ -23,7 +26,10 @@ export default {
     }
   },
   async created() {
-    const res = await req("getRoleList")
+    const res = await req("getRoleList", {
+      pageIndex: 1,
+      pageSize: 10,
+    })
     this.tableData = res.records
   },
 }

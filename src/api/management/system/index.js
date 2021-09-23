@@ -10,7 +10,7 @@ export const config = {
     method: "get",
   },
   getRoleList: {
-    url: "/role/list",
+    url: "/role/list?pageIndex={pageIndex}&pageSize={pageSize}",
     method: "get",
   },
 }

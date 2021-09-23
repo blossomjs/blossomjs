@@ -10,6 +10,9 @@ import {
   ElTable,
   ElAvatar,
   ElButton,
+  ElForm,
+  ElFormItem,
+  ElInput,
 } from "element-plus"
 
 export default (app) => {
@@ -24,4 +27,7 @@ export default (app) => {
   app.use(ElTable)
   app.use(ElAvatar)
   app.use(ElButton)
+  app.use(ElForm)
+  app.use(ElFormItem)
+  app.use(ElInput)
 }

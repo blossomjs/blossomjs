@@ -8,15 +8,31 @@
       <span class="txt">特效仓库</span>
       <span class="txt">to build the next generation web interface</span>
     </div>
-    <ul class="nav-menu">
-      <li><a href="#">登录</a></li>
+    <ul class="nav-menu" v-if="!hasLogin">
+      <li><router-link to="/login">登录</router-link></li>
       <li><a href="#">注册</a></li>
+    </ul>
+    <ul class="nav-menu" v-else>
+      <li>
+        <router-link to="/management">{{ user.name || "未知用户" }}</router-link>
+      </li>
     </ul>
   </div>
 </template>
 <script>
+import { computed } from "vue"
+import { useStore } from "vuex"
 export default {
   name: "HeaderBar",
+  setup() {
+    const store = useStore()
+    const user = computed(() => store.state.user.info)
+    const hasLogin = computed(() => store.state.user.hasLogin)
+    return {
+      user,
+      hasLogin,
+    }
+  },
 }
 </script>
 <style scoped lang="scss">
