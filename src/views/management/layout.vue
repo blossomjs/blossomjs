@@ -1,6 +1,6 @@
 <template>
-  <m-layout-pro :logo="logoSrc" :menu="menu">
-    <template v-slot:breadcrumb>
+  <m-layout-pro :logo="logoSrc" :menu="accessList">
+    <template v-slot:breadcrumb v-if="items.length">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item v-for="item in items" :key="item.url">
           <span class="item" style="cursor: auto">{{ item.name }}</span>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
 import logo from "@/assets/images/management/logo.png"
 
 export default {
@@ -18,21 +19,11 @@ export default {
   data() {
     return {
       logoSrc: logo,
-      menu: [
-        {
-          id: 1,
-          name: "系统管理",
-          icon: "setting",
-          url: "/management/system",
-          children: [
-            { id: 2, name: "菜单管理", url: "/management/system/menu" },
-            { id: 3, name: "用户管理", url: "/management/system/user" },
-            { id: 4, name: "角色管理", url: "/management/system/role" },
-          ],
-        },
-      ],
       items: [],
     }
+  },
+  computed: {
+    ...mapState("managementAccess", ["accessList"]),
   },
   mounted() {
     this.getCrumbItems()
@@ -54,10 +45,9 @@ export default {
     getCrumbItems() {
       this.items = this.$route.matched
         .map((item) => {
-          return this.findMenuItem(this.menu, item)
+          return this.findMenuItem(this.accessList, item)
         })
         .filter((item) => !!item)
-      console.log(this.items)
     },
   },
   watch: {

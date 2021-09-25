@@ -5,7 +5,7 @@
         <el-tree
           ref="menuTree"
           class="menu-tree"
-          :data="menuLists"
+          :data="accessList"
           :props="{ children: 'children', label: 'name' }"
           :accordion="true"
           :highlight-current="true"
@@ -19,23 +19,12 @@
 </template>
 
 <script>
+import { mapState } from "vuex"
+
 export default {
   name: "menu",
-  data() {
-    return {
-      menuLists: [
-        {
-          id: 1,
-          name: "系统管理",
-          icon: "setting",
-          children: [
-            { id: 2, name: "菜单管理", url: "/management/system/menu" },
-            { id: 3, name: "用户管理", url: "/management/system/user" },
-            { id: 4, name: "角色管理", url: "/management/system/role" },
-          ],
-        },
-      ],
-    }
+  computed: {
+    ...mapState("managementAccess", ["accessList"]),
   },
 }
 </script>
