@@ -12,6 +12,8 @@ import {
   ElButton,
   ElForm,
   ElFormItem,
+  ElTree,
+  ElBreadcrumb,
   ElInput,
 } from "element-plus"
 
@@ -29,5 +31,7 @@ export default (app) => {
   app.use(ElButton)
   app.use(ElForm)
   app.use(ElFormItem)
+  app.use(ElTree)
+  app.use(ElBreadcrumb)
   app.use(ElInput)
 }

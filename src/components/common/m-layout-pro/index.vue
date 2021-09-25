@@ -11,7 +11,11 @@
       </el-aside>
       <el-container>
         <el-main class="layout-main">
-          <router-view></router-view>
+          <slot name="breadcrumb"></slot>
+          <keep-alive>
+            <router-view v-if="$route.meta.keepAlive"></router-view>
+          </keep-alive>
+          <router-view v-if="!$route.meta.keepAlive"></router-view>
         </el-main>
         <el-footer class="layout-footer" height="40px">
           <layout-footer></layout-footer>
@@ -56,6 +60,7 @@ export default {
     }
     .layout-main {
       overflow: auto;
+      padding: 4px;
     }
     .layout-footer {
       background: #fff;
