@@ -11,6 +11,9 @@ export default [
         path: "home",
         name: "home",
         component: () => import("@/views/management/home"),
+        meta: {
+          hideBreadcrumb: true,
+        },
       },
       ...system,
     ],

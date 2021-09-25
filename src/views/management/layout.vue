@@ -43,6 +43,10 @@ export default {
       return null
     },
     getCrumbItems() {
+      if (this.$route.meta.hideBreadcrumb) {
+        this.items = []
+        return
+      }
       this.items = this.$route.matched
         .map((item) => {
           return this.findMenuItem(this.accessList, item)
