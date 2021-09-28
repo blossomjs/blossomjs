@@ -5,7 +5,7 @@
         <el-tree
           ref="menuTree"
           class="menu-tree"
-          :data="accessList"
+          :data="menuTree"
           :props="{ children: 'children', label: 'name' }"
           :accordion="true"
           :highlight-current="true"
@@ -39,11 +39,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapGetters, mapState } from "vuex"
 
 export default {
   name: "menuManagement",
   computed: {
+    ...mapGetters("managementAccess", ["menuTree"]),
     ...mapState("managementAccess", ["accessList"]),
   },
   data() {
@@ -64,6 +65,9 @@ export default {
         },
       },
     }
+  },
+  created() {
+    console.log(this.menuTree)
   },
   methods: {
     proxyClickTree(data, node, nodeVM) {

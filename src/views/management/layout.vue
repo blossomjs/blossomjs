@@ -1,5 +1,5 @@
 <template>
-  <m-layout-pro :logo="logoSrc" :menu="accessList">
+  <m-layout-pro :logo="logoSrc" :menu="menuTree">
     <template v-slot:breadcrumb v-if="items.length">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item v-for="item in items" :key="item.url">
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapGetters, mapState } from "vuex"
 import logo from "@/assets/images/management/logo.png"
 
 export default {
@@ -23,6 +23,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters("managementAccess", ["menuTree"]),
     ...mapState("managementAccess", ["accessList"]),
   },
   mounted() {
