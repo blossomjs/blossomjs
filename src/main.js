@@ -12,6 +12,7 @@ router.beforeEach(async (to, from, next) => {
   if (to.matched[0]?.name === "management") {
     await store.dispatch("user/getUserInfo")
     if (store.state.user.info.userType === 1) {
+      await store.dispatch("managementAccess/getAccessList")
       next()
     } else {
       next(NOT_FOUND_PATH)
