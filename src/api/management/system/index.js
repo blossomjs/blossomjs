@@ -9,6 +9,18 @@ export const config = {
     url: "/menu/list",
     method: "get",
   },
+  addMenu: {
+    url: "/menu/add",
+    method: "post",
+  },
+  modifyMenu: {
+    url: "/menu/modify",
+    method: "post",
+  },
+  deleteMenu: {
+    url: "/menu/delete?menuId={menuId}",
+    method: "post",
+  },
   getRoleList: {
     url: "/role/list?pageIndex={pageIndex}&pageSize={pageSize}",
     method: "get",

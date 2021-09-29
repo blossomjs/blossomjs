@@ -11,7 +11,7 @@ export default {
   getters: {
     menuTree: (state) => {
       let list = clone(state.accessList)
-      return Datashaping(list, "menuId", "parentId", "children", "orderIndex", -1)
+      return Datashaping(list, "menuId", "parentId", "children", "orderIndex", 1)
     },
   },
   mutations: {
