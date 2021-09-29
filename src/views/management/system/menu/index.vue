@@ -133,7 +133,8 @@ export default {
       this.formProps.model.menuId = node.data.menuId
     },
     appendNode(data) {
-      const node = this.$refs.menuTree.getCurrentNode()
+      const nodeData = this.$refs.menuTree.getCurrentNode()
+      const node = this.$refs.menuTree.getNode(nodeData)
       const append = () => {
         node.insertChild({
           data,
