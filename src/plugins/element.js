@@ -15,6 +15,7 @@ import {
   ElTree,
   ElBreadcrumb,
   ElInput,
+  ElMessageBox,
 } from "element-plus"
 
 export default (app) => {
@@ -34,4 +35,5 @@ export default (app) => {
   app.use(ElTree)
   app.use(ElBreadcrumb)
   app.use(ElInput)
+  app.config.globalProperties.$confirm = ElMessageBox.confirm
 }

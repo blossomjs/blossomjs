@@ -6,6 +6,7 @@
       :rules="rules"
       :size="props.size"
       style="max-width: 400px"
+      ref="elForm"
     >
       <slot></slot>
     </el-form>
@@ -29,6 +30,7 @@ export default {
   provide() {
     return {
       mForm: this,
+      elForm: null,
     }
   },
   props: {
@@ -57,6 +59,16 @@ export default {
     props() {
       return Object.assign(this.$data.default, this.formProps)
     },
+  },
+  watch: {
+    readonly(readonly) {
+      if (readonly) {
+        this.elForm.clearValidate()
+      }
+    },
+  },
+  mounted() {
+    this.elForm = this.$refs.elForm
   },
 }
 </script>

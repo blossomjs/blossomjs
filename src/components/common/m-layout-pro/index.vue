@@ -16,10 +16,10 @@
             <router-view v-if="$route.meta.keepAlive"></router-view>
           </keep-alive>
           <router-view v-if="!$route.meta.keepAlive"></router-view>
+          <el-footer class="layout-footer" height="40px">
+            <layout-footer></layout-footer>
+          </el-footer>
         </el-main>
-        <el-footer class="layout-footer" height="40px">
-          <layout-footer></layout-footer>
-        </el-footer>
       </el-container>
     </el-container>
   </el-container>
@@ -61,6 +61,9 @@ export default {
     .layout-main {
       overflow: auto;
       padding: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
     }
     .layout-footer {
       background: #fff;
