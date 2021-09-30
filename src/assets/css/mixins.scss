@@ -4,10 +4,13 @@
   white-space: nowrap;
 }
 
-@mixin clearfix{
-  &:after{
-    content:"";
+@mixin clearfix {
+  &:after {
+    content: "";
     display: block;
     clear: both;
   }
+}
+@mixin transition {
+  transition: all 0.3s;
 }
