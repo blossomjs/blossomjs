@@ -1,7 +1,7 @@
 <template>
   <div class="header-bar">
     <div class="logo">
-      <img src="../../assets/images/logo.png" />
+      <img src="../../../assets/images/logo.png" />
     </div>
     <div class="title">
       <span class="tit">blossomjs</span>
@@ -14,7 +14,7 @@
     </ul>
     <ul class="nav-menu" v-else>
       <li>
-        <router-link to="/management">{{ user.name || "未知用户" }}</router-link>
+        <router-link to="/management"><i class="el-icon-user"></i> {{ user.name || "未知用户" }}</router-link>
       </li>
     </ul>
   </div>
