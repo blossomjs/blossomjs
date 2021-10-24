@@ -52,7 +52,7 @@
       background: #ea1c28;
       background: -webkit-linear-gradient(left, #e53f78, #ea1c28);
       color: #fff;
-      border-radius: 50px;
+      border-radius: 0 50px 50px 0;
       cursor: pointer;
       @include transition;
       &:hover {

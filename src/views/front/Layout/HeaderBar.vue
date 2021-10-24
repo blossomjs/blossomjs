@@ -1,7 +1,7 @@
 <template>
   <div class="header-bar">
     <div class="logo">
-      <img src="../../../assets/images/logo.png" />
+      <router-link to="/"><img src="../../../assets/images/logo.png" /></router-link>
     </div>
     <div class="title">
       <span class="tit">blossomjs</span>
@@ -14,7 +14,7 @@
     </ul>
     <ul class="nav-menu" v-else>
       <li>
-        <router-link to="/management"><i class="el-icon-user"></i> {{ user.name || "未知用户" }}</router-link>
+        <router-link to="/usercenter"><i class="el-icon-user"></i> {{ user.name || "未知用户" }}</router-link>
       </li>
     </ul>
   </div>
@@ -23,6 +23,7 @@
 import { computed } from "vue"
 import { useStore } from "vuex"
 export default {
+  components: {},
   name: "HeaderBar",
   setup() {
     const store = useStore()
@@ -50,6 +51,7 @@ export default {
     }
   }
   .title {
+    height: 70px;
     line-height: 70px;
     float: left;
     > span {

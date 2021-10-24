@@ -20,6 +20,8 @@ import {
   ElPagination,
   ElSelect,
   ElOption,
+  ElTabs,
+  ElTabPane,
 } from "element-plus"
 
 export default (app) => {
@@ -43,5 +45,7 @@ export default (app) => {
   app.use(ElPagination)
   app.use(ElSelect)
   app.use(ElOption)
+  app.use(ElTabs)
+  app.use(ElTabPane)
   app.config.globalProperties.$confirm = ElMessageBox.confirm
 }

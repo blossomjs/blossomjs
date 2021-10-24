@@ -6,8 +6,8 @@ export default {
   state: {
     token: "",
     loginId: "",
-    info: {},
-    hasLogin: false,
+    info: storage.local.get("userInfo") || {},
+    hasLogin: storage.local.get("userInfo") ? true : false,
   },
   getters: {},
   mutations: {
