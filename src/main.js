@@ -6,6 +6,7 @@ import "normalize.css"
 import "./assets/css/main.scss"
 import installElementPlus from "./plugins/element"
 import installM from "./plugins/m"
+import 'element-plus/dist/index.css'
 
 const NOT_FOUND_PATH = "/not-found"
 router.beforeEach(async (to, from, next) => {
