@@ -19,6 +19,11 @@ export default [
         name: "role",
         component: () => import("@/views/management/system/role"),
       },
+      {
+        path: "dict",
+        name: "dict",
+        component: () => import("@/views/management/system/dict"),
+      },
     ],
   },
 ]
